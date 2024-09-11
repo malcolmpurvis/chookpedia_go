@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Blackie",
+    "colour": "black",
+    "photo_url": "<none>",
+    "breed": "Australorp"
+  },
+  {
+    "name": "Parmi",
+    "colour": "blue",
+    "photo_url": "<none>",
+    "breed": "Australorp"
+  },
+  {
+    "name": "Charcoal",
+    "colour": "black",
+    "photo_url": "<none>",
+    "breed": "Australorp"
+  },
+  {
+    "name": "Cheeky",
+    "colour": "black",
+    "photo_url": "<none>",
+    "breed": "Misc"
+  },
+  {
+    "name": "Tikka",
+    "colour": "grey",
+    "photo_url": "<none>",
+    "breed": "Araucana"
+  },
+  {
+    "name": "Cathy",
+    "colour": "brown",
+    "photo_url": "<none>",
+    "breed": "Old English Game"
+  }
+]

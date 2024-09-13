@@ -8,7 +8,7 @@ clean:
 	rm server db-management
 
 bee:
-	bee run -main=cmd/server/main.go
+	bee run -main=cmd/server/main.go server
 
 checkstyle:
 	gofmt ./...

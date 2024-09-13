@@ -1,6 +1,30 @@
 # -*- restclient -*-
 
 # JSON
-GET http://localhost:8080/rest/v1/chook/Blackie
+GET http://localhost:8080/rest/v1/chook
+User-Agent: Emacs Restclient
+
+# JSON
+GET http://localhost:8080/rest/v1/chook/2
+User-Agent: Emacs Restclient
+
+# JSON
+GET http://localhost:8080/rest/v1/chook/1000
+User-Agent: Emacs Restclient
+
+# JSON
+GET http://localhost:8080/rest/v1/breed
+User-Agent: Emacs Restclient
+
+# JSON
+GET http://localhost:8080/rest/v1/breed/2
+User-Agent: Emacs Restclient
+
+# JSON
+GET http://localhost:8080/rest/v1/breed/1000
+User-Agent: Emacs Restclient
+
+# 
+GET http://localhost:8080/rest/v1/breed/hen
 User-Agent: Emacs Restclient
 

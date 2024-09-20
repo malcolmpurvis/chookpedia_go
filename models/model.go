@@ -6,7 +6,7 @@ import (
 )
 
 type Chook struct {
-	Id       int    `orm:"auto";primary_key`
+	Id       int    `orm:"auto;primary_key"`
 	Name     string `json:"name"`
 	Colour   string `json:"colour"`
 	PhotoURL string `json:"photo_url"`
@@ -14,7 +14,7 @@ type Chook struct {
 }
 
 type Breed struct {
-	Id     int    `orm:"auto";primary_key`
+	Id     int    `orm:"auto;primary_key"`
 	Name   string `json:"name"`
 	Origin string `json:"origin"`
 }

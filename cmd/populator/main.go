@@ -10,7 +10,7 @@ import (
 )
 
 type ChookFile struct {
-	Id       int    `orm:"auto";primary_key`
+	Id       int    `orm:"auto;primary_key"`
 	Name     string `json:"name"`
 	Colour   string `json:"colour"`
 	PhotoURL string `json:"photo_url"`
@@ -45,7 +45,9 @@ func populate() {
 	for _, breed := range breeds {
 		o.Insert(&breed)
 	}
+
 	content, err = ioutil.ReadFile("static/db/chooks.json")
+
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -68,6 +70,7 @@ func populate() {
 	fmt.Printf("Deleted %v rows from chooks table.\n", rows)
 
 	fmt.Println(chooks)
+
 	for _, chook := range chooks {
 		dbChook := new(models.Chook)
 		dbChook.Name = chook.Name

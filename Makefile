@@ -11,5 +11,6 @@ bee:
 	bee run -main=cmd/server/main.go server
 
 checkstyle:
-	gofmt ./...
+	gofmt -s -w .
 	go vet ./...
+	golangci-lint run --enable-all --disable lll,gomnd,exportloopref,execinquery

@@ -20,11 +20,8 @@ type JSONChookController struct {
 }
 
 func (c *JSONChookController) Get() {
-	o := orm.NewOrm()
 	id, _ := strconv.Atoi(c.Ctx.Input.Param(":id"))
-	chook := models.Chook{Id: id}
-
-	err := o.Read(&chook)
+	chook, err := models.FindChook(id)
 
 	if err == orm.ErrNoRows {
 		c.CustomAbort(404, "No primary key found.")
@@ -51,10 +48,7 @@ type JSONChookCollectionController struct {
 }
 
 func (c *JSONChookCollectionController) Get() {
-	var chooks []*models.Chook
-
-	o := orm.NewOrm()
-	_, err := o.QueryTable("chook").All(&chooks)
+	chooks, err := models.AllChooks()
 
 	if err != nil {
 		c.CustomAbort(404, err.Error())
@@ -88,11 +82,8 @@ type JSONBreedController struct {
 }
 
 func (c *JSONBreedController) Get() {
-	o := orm.NewOrm()
 	id, _ := strconv.Atoi(c.Ctx.Input.Param(":id"))
-	breed := models.Breed{Id: id}
-
-	err := o.Read(&breed)
+	breed, err := models.FindBreed(id)
 
 	if err == orm.ErrNoRows {
 		c.CustomAbort(404, "No primary key found.")

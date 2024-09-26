@@ -6,7 +6,7 @@ import (
 )
 
 type Chook struct {
-	Id       int    `orm:"auto;primary_key"`
+	Id       int    `orm:"auto"`
 	Name     string `json:"name"`
 	Colour   string `json:"colour"`
 	PhotoURL string `json:"photo_url"`
@@ -14,7 +14,7 @@ type Chook struct {
 }
 
 type Breed struct {
-	Id     int    `orm:"auto;primary_key"`
+	Id     int    `orm:"auto"`
 	Name   string `json:"name"`
 	Origin string `json:"origin"`
 }
@@ -25,4 +25,31 @@ func InitModel() {
 	orm.RegisterModel(new(Breed))
 	orm.RegisterModel(new(Chook))
 	orm.RunSyncdb("default", false, true)
+}
+
+func AllChooks() ([]*Chook, error) {
+	var chooks []*Chook
+
+	o := orm.NewOrm()
+	_, err := o.QueryTable("chook").All(&chooks)
+
+	return chooks, err
+}
+
+func FindChook(id int) (Chook, error) {
+	o := orm.NewOrm()
+	chook := Chook{Id: id}
+
+	err := o.Read(&chook)
+
+	return chook, err
+}
+
+func FindBreed(id int) (Breed, error) {
+	o := orm.NewOrm()
+	breed := Breed{Id: id}
+
+	err := o.Read(&breed)
+
+	return breed, err
 }

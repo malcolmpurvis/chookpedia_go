@@ -15,7 +15,7 @@ import (
 func init() {
 	beego.Router("/", &controllers.MainController{})
 	beego.Router("/blackie", &controllers.BlackieController{})
-	beego.Router("/chook/:chook:string", &controllers.ChookController{})
+	beego.Router("/chook/:id:int", &controllers.ChookController{})
 
 	// REST endpoints
 

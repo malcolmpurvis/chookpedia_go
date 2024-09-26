@@ -1,6 +1,8 @@
 package controllers
 
 import (
+	"chookpedia_go/models"
+	"github.com/beego/beego/v2/client/orm"
 	beego "github.com/beego/beego/v2/server/web"
 )
 
@@ -9,7 +11,18 @@ type MainController struct {
 }
 
 func (c *MainController) Get() {
-	c.Data["Website"] = "beego.vip"
-	c.Data["Email"] = "astaxie@gmail.com"
-	c.TplName = "index.tpl"
+	o := orm.NewOrm()
+
+	chooks, err := models.AllChooks()
+
+	if err != nil {
+		c.CustomAbort(404, err.Error())
+	}
+
+	for _, chook := range chooks {
+		o.Read(chook.Breed)
+	}
+
+	c.Data["chooks"] = chooks
+	c.TplName = "all_chooks.tpl"
 }

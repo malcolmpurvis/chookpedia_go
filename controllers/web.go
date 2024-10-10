@@ -33,6 +33,7 @@ func (c *BlackieController) Get() {
 	c.Data["Name"] = chook.Name
 	c.Data["Colour"] = chook.Colour
 	c.Data["Breed"] = breed.Name
+	c.Data["PhotoURL"] = chook.PhotoURL
 	c.TplName = "chook.tpl"
 }
 
@@ -62,5 +63,6 @@ func (c *ChookController) Get() {
 	c.Data["Name"] = chook.Name
 	c.Data["Colour"] = chook.Colour
 	c.Data["Breed"] = breed.Name
+	c.Data["PhotoURL"] = chook.PhotoURL
 	c.TplName = "chook.tpl"
 }

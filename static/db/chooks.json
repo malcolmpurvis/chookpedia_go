@@ -8,19 +8,19 @@
   {
     "name": "Parmi",
     "colour": "blue",
-    "photo_url": "<none>",
+    "photo_url": "/static/img/parmi.jpeg",
     "breed": "Australorp"
   },
   {
     "name": "Charcoal",
     "colour": "black",
-    "photo_url": "<none>",
+    "photo_url": "/static/img/charcoal.jpeg",
     "breed": "Australorp"
   },
   {
     "name": "Cheeky",
     "colour": "black",
-    "photo_url": "<none>",
+    "photo_url": "/static/img/cheeky.jpeg",
     "breed": "Misc"
   },
   {
@@ -32,7 +32,7 @@
   {
     "name": "Cathy",
     "colour": "brown",
-    "photo_url": "<none>",
+    "photo_url": "/static/img/cathy.jpeg",
     "breed": "Old English Game"
   }
 ]

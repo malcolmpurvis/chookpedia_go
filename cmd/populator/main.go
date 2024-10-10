@@ -69,8 +69,6 @@ func populate() {
 	rows, _ = res.RowsAffected()
 	fmt.Printf("Deleted %v rows from chooks table.\n", rows)
 
-	fmt.Println(chooks)
-
 	for _, chook := range chooks {
 		dbChook := new(models.Chook)
 		dbChook.Name = chook.Name
@@ -79,7 +77,6 @@ func populate() {
 
 		var thisBreed models.Breed
 
-		fmt.Println(chook)
 		err := o.QueryTable("breed").Filter("name", chook.Breed).One(&thisBreed)
 		if err == orm.ErrMultiRows {
 			// Have multiple records
@@ -92,9 +89,7 @@ func populate() {
 
 		dbChook.Breed = &thisBreed
 
-		fmt.Println(dbChook)
-
-		fmt.Println(o.Insert(dbChook))
+		o.Insert(dbChook)
 	}
 }
 

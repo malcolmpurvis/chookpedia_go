@@ -8,6 +8,8 @@
   <body>
     <h1>{{.Name}}</h1>
 
+    <img src="{{.PhotoURL}}">
+
     <dl>
       <dt> Name: </dt> <dd> {{.Name}} </dd>
       <dt>Colour:</dt> <dd> {{.Colour}}</dd>

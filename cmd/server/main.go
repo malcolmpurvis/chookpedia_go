@@ -8,5 +8,6 @@ import (
 
 func main() {
 	models.InitModel()
+	beego.SetStaticPath("/static", "static")
 	beego.Run()
 }

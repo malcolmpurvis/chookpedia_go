@@ -11,13 +11,14 @@ type BlackieController struct {
 	beego.Controller
 }
 
+
 func (c *BlackieController) Get() {
 	id := 1
 
 	chook, err := models.FindChook(id)
 
 	if err == orm.ErrNoRows {
-		c.CustomAbort(404, "No primary key found.")
+		c.CustomAbort(404, "No primary key found !!!!.")
 	} else if err == orm.ErrMissPK {
 		c.CustomAbort(500, "No primary key found.")
 	}

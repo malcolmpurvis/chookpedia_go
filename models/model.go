@@ -21,7 +21,7 @@ type Breed struct {
 
 func InitModel() {
 	orm.RegisterDriver("postgres", orm.DRPostgres)
-	orm.RegisterDataBase("default", "postgres", "user=malcolmp host=127.0.0.1 port=5432 dbname=chookpedia sslmode=disable")
+	orm.RegisterDataBase("default", "postgres", "user=malcolmp password=example host=db port=5432 dbname=chookpedia sslmode=disable")
 	orm.RegisterModel(new(Breed))
 	orm.RegisterModel(new(Chook))
 	orm.RunSyncdb("default", false, true)
